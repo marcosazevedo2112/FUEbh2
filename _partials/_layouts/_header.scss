@@ -1,0 +1,470 @@
+/* Header */
+.header {
+  // classe adicionada via JS quando o menu estiver aberto para impedir o scroll do elemento
+  .navbar.fixa-menu {
+    position: fixed;
+    z-index: 10000;
+    background-color: #c8a97b;
+  }
+
+  //Important: integrating hamburger icon with bootstrap navbar
+  button[aria-expanded="true"] {
+    @extend .is-active;
+  }
+  .hamburger {
+    //padding: 10px 8px 3px;
+    padding: 9px 4px 2px 9px;
+    background-color: $primary;
+    border-radius: 100px;
+  }
+  .navbar {
+    background-color: $white;
+    position: relative;
+    width: 100%;
+    .hamburger-box {
+      width: 30px;
+      height: 27px;
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: $secondary;
+        width: 25px;
+        height: 3px;
+      }
+      .hamburger-inner::before {
+        top: -7px;
+      }
+      .hamburger-inner::after {
+        bottom: -7px;
+      }
+    }
+    .navbar-brand {
+      display: inline;
+      width: auto;
+      max-width: 60%;
+      padding: 0;
+      margin: 0;
+      z-index: 9999;
+    }
+  }
+
+  //Menu principal
+  .main-menu {
+    .container-menu {
+      padding: 80px 0;
+    }
+
+    .nav {
+      padding: 0 16px;
+      flex-wrap: nowrap;
+      height: 80vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .nav-item:first-child {
+        .nav-link::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: #d3ba95;
+          top: 0;
+          left: 0;
+        }
+      }
+      .nav-item{
+        .body-level-1{
+          ul{
+            padding: 10px 0 10px 0;
+          }
+        }
+        .body-level-2{
+          ul{
+            padding: 16px 12px 20px 12%;
+            background-color: #d3ba95;
+            li{
+              margin-bottom: 20px;
+            }
+          }
+        }        
+      }
+      .nav-link {
+        position: relative;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 2.4rem;
+        line-height: 6.4rem;
+        letter-spacing: 0.02em;
+        color: #ffffff;
+        padding: .5rem 5% 1.5rem 5%;
+        &:hover,
+        &.active {
+          transition: all 0.2s ease-in-out;
+          background-color: #d3ba95;
+          color: #2d1505;
+        }
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: #d3ba95;
+          bottom: 0;
+          left: 0;
+        }
+        span {
+          position: absolute;
+          right: 5%;
+        }
+        &:hover span svg path {
+          fill: #2d1505;
+        }
+      }
+      .card {
+        background-color: transparent;
+        border: none;
+        padding: 0 0;
+      }
+      .card-body {
+        background-color: transparent;
+        ul {
+          padding-left: 5%;
+          li {
+            margin-bottom: 7px;
+            a {
+              color: #fff;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 1.3rem;
+              line-height: 2rem;
+              letter-spacing: 0.02em;
+              color: #ffffff;
+              &:hover {
+                transition: all 0.2s ease-in-out;
+                color: #2d1505;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+      [aria-expanded="true"] {
+        background-color: #d3ba95;
+        color: #2d1505;
+      }
+      [aria-expanded="true"] svg path {
+        fill: #2d1505;
+      }
+      /* Rotacioanr a setinha */
+      [data-toggle="collapse"].collapsed svg {
+        transform: rotate(0);
+        transition: all 0.3s ease-in-out 0s;
+        margin-top: -3px;
+      }
+      [data-toggle="collapse"] svg {
+        transform: rotate(90deg);
+        transition: all 0.3s ease-in-out 0s;
+        margin-top: 0;
+      }
+      /* // Rotacioanr a setinha */
+    }
+  }
+
+  .fixed-top {
+    .rsmn-mobile {
+      position: absolute;
+      bottom: 0px;
+      right: 25px;
+      .redes-menu {
+        display: none;
+      }
+      .redes-menu-m {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        list-style: none;
+        li {
+          margin: 0 10px 30px;
+          a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            border: 2px solid #ffffff;
+            box-sizing: border-box;
+          }
+        }
+        //li
+        .bto-zap {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: -5px;
+          span {
+            margin-right: 10px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.3rem;
+            line-height: 2.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #c8a97b;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjM2IiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMjM2IDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCAyMEMwIDguOTU0MzEgOC45NTQzIDAgMjAgMEgyMDdDMjE4LjA0NiAwIDIyNyA4Ljk1NDMxIDIyNyAyMEMyMjcgMzEuMDQ1NyAyMTguMDQ2IDQwIDIwNyA0MEgyMEM4Ljk1NDMxIDQwIDAgMzEuMDQ1NyAwIDIwWiIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMjIwLjI0IiB5PSI1IiB3aWR0aD0iMjEuMzAyIiBoZWlnaHQ9IjIxLjMwMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgMjIwLjI0IDUpIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+            background-repeat: no-repeat;
+            width: 235px;
+            height: 40px;
+            padding: 6px 0 0 20px;
+          }
+          a {
+            background-color: #fff;
+            width: 70px;
+            height: 70px;
+            &:hover {
+              transition: all 0.2s ease-in-out;
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// header
+
+// header menu para paginas internas
+.header.internal-header {
+  .navbar {
+    position: relative;
+    padding: 15px 30px;
+    background-color: $primary;
+    svg path {
+      fill: $white;
+    }
+  }
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(sm) {
+  /* Header */
+  .header {
+    .navbar {
+      .navbar-brand {
+        svg {
+          max-width: 260px;
+        }
+      }
+    }
+  }
+}
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+}
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  // aumenta tamanho do menu hamburguer
+  $hamburger-layer-width: 36px;
+  $hamburger-layer-height: 6px;
+
+  /* Header */
+  .header {
+    .navbar {
+      position: absolute;
+      background-color: transparent;
+      .hamburger-box {
+        width: 30px;
+        height: 27px;
+        .hamburger-inner,
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+          width: 30px;
+          height: 5px;
+        }
+        .hamburger-inner::before {
+          top: -11px;
+        }
+        .hamburger-inner::after {
+          bottom: -11px;
+        }
+      }
+    }
+    .hamburger {
+      padding: 22px 20px 15px;
+    }
+
+    //Menu principal
+    .main-menu {
+      .container-menu {
+        padding: 130px 0;
+      }
+      .nav {
+        padding: 0;
+        height: 80vh;
+        .nav-item:first-child {
+          .nav-link::after {
+            width: 35%;
+            left: calc(110vw - 79%);
+          }
+        }
+        .nav-link {
+          font-size: 3.6rem;
+          line-height: 9.4rem;
+          padding: .5rem 5% .5rem 35%;
+          &::before {
+            width: 35%;
+            left: calc(110vw - 79%);
+          }
+          span {
+            right: 35%;
+          }
+        }
+        .nav-item{
+          .body-level-1{
+            ul{
+              padding-left: 0;
+            }
+          }
+          .body-level-2{
+            ul{
+              padding: 16px 0 20px 38%;
+              li{
+                margin-bottom: 8px;
+              }
+            }
+          }        
+        }        
+        .card {
+          padding: 0 0;
+        }
+        .card-body {
+          ul {
+            padding-left: 35%;
+            li {
+              margin-bottom: 0;
+              a {
+                font-size: 1.8rem;
+                line-height: 4.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .fixed-top {
+      .rsmn-mobile {
+        position: absolute;
+        bottom: 10px;
+        right: 45px;
+        .redes-menu {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+          list-style: none;
+          li {
+            margin: 0 10px 30px;
+            a {
+              width: 51px;
+              height: 51px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50px;
+              border: 2px solid #ffffff;
+              box-sizing: border-box;
+              &:hover {
+                transition: all 0.2s ease-in-out;
+                background-color: #fff;
+              }
+              &:hover svg path {
+                transition: all 0.2s ease-in-out;
+                fill: $primary;
+              }
+            }
+          }
+          //li
+          .bto-zap {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: -5px;
+            span {
+              margin-right: 10px;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 1.3rem;
+              line-height: 2.8rem;
+              letter-spacing: 0.15em;
+              text-transform: uppercase;
+              color: #c8a97b;
+              background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjM2IiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMjM2IDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCAyMEMwIDguOTU0MzEgOC45NTQzIDAgMjAgMEgyMDdDMjE4LjA0NiAwIDIyNyA4Ljk1NDMxIDIyNyAyMEMyMjcgMzEuMDQ1NyAyMTguMDQ2IDQwIDIwNyA0MEgyMEM4Ljk1NDMxIDQwIDAgMzEuMDQ1NyAwIDIwWiIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMjIwLjI0IiB5PSI1IiB3aWR0aD0iMjEuMzAyIiBoZWlnaHQ9IjIxLjMwMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgMjIwLjI0IDUpIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+              background-repeat: no-repeat;
+              width: 235px;
+              height: 40px;
+              padding: 6px 0 0 20px;
+            }
+            a {
+              background-color: #fff;
+              width: 70px;
+              height: 70px;
+              &:hover {
+                transition: all 0.2s ease-in-out;
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+        .redes-menu-m {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// 991px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(xl) {
+  /* Header */
+  .header {
+    .navbar {
+      .navbar-brand {
+        svg {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}
+// 1200px

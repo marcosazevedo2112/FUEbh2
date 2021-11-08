@@ -1,0 +1,88 @@
+/* Footer */
+footer{
+    text-align: left;
+    margin: 50px 0px;
+    margin-left: 50px;
+    .row{
+      #logo-footer{
+        width: 70vw;
+        margin-bottom: 50px;
+      }
+      ul{
+        text-align: left;
+        li{
+          margin-top: 30px;
+          img{
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+  .barra-footer{
+    height: 100px;
+    background-color: $primary;
+    align-items: center;
+    #privacidade-wrapper{
+        text-align: center;
+    }
+    a{
+      color: $white;
+      font-size: 1.5rem;
+    }
+  }
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+@include media-breakpoint-up(sm) {}
+*/
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+    footer{
+        margin: 80px 0px;
+        .row{
+          align-items: center;
+          #logo-footer{
+            width: 300px;
+          }
+        }
+      }
+      .barra-footer{
+        height: 150px;
+      }
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+    footer .row{
+      ul li{
+        font-size: 2rem;
+      }
+    }
+}
+// 991px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+@include media-breakpoint-up(xl) {}
+*/
+// 1200px

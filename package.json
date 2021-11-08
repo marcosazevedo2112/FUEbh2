@@ -1,0 +1,30 @@
+{
+  "name": "soe-solsist-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "b-css": "dart-sass _partials assets/css",
+    "w-css": "dart-sass --watch _partials assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Calebedesign-dev/SOE-Solsist-HTML.git"
+  },
+  "author": "Equipe de Desenvolvimento Web da Calebe_ Design <contato@calebedesign.com.br>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Calebedesign-dev/SOE-Solsist-HTML/issues"
+  },
+  "homepage": "https://github.com/Calebedesign-dev/SOE-Solsist-HTML#readme",
+  "devDependencies": {
+    "bootstrap": "^4.6.0",
+    "dart-sass": "^1.25.0",
+    "hamburgers": "^1.1.3"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "swiper": "^6.4.15"
+  }
+}

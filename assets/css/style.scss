@@ -1,0 +1,44 @@
+/*
+//-------------------------------------------------------------------
+@File: Default Styles
+
+@Author: Marcelo Fiuza
+Author E-mail: contato@marcelofq.com.br
+
+@Author: Henderson Torres
+Author E-mail: teconet.arte@gmail.com
+
+//-------------------------------------------------------------------
+*/
+
+// Variavéis de configuração do bootstrap (tem que ser antes do bootstrap)
+@import "../../_partials/variables";
+
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Hamburges Icon Menu
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+// AOS Animation
+@import "../../node_modules/aos/src/sass/aos.scss";
+
+// Globals
+@import "../../_partials/globals";
+
+// Layouts
+@import "../../_partials/_layouts/header";
+@import "../../_partials/_layouts/footer";
+@import "../../_partials/_layouts/cards-tratamentos";
+@import "../../_partials/_layouts/content";
+@import "../../_partials/_layouts/duvidas";
+@import "../../_partials/_layouts/veja-tambem";
+@import "../../_partials/_layouts/tags";
+@import "../../_partials/_layouts/titulo.scss";
+
+// Paginas
+@import "../../_partials/_pages/home";
+@import "../../_partials/_pages/contato";
+@import "../../_partials/_pages/noticias";
+@import "../../_partials/_pages/a-clinica";
+@import "../../_partials/_pages/ensino";

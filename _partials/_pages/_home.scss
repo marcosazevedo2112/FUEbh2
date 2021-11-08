@@ -1,0 +1,624 @@
+.page-home {
+  .topo {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    i {
+      @include box-i(absolute, 50vh);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: -80px top;
+      //background-attachment: fixed;
+    }
+
+    .grid-container {
+      position: relative;
+      z-index: 1;
+
+      display: grid;
+      grid-template-columns: 75% 25%;
+      grid-template-rows: 50vh 50vh;
+      gap: 0px 0px;
+      grid-template-areas:
+        ". topo-rs"
+        "topo-chamada topo-wzap";
+      .topo-chamada {
+        grid-area: topo-chamada;
+        padding: 30px 0 30px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: min-content;
+        h1 {
+          color: $secondary;
+          font-size: 4rem;
+          line-height: 1.1;
+        }
+        p {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 2rem;
+          line-height: 3rem;
+          letter-spacing: 0.02em;
+          color: #707070;
+        }
+      }
+
+      .topo-wzap {
+        grid-area: topo-wzap;
+        position: fixed;
+        bottom: 5px;
+        right: 15px;
+        a img {
+          width: 50px;
+        }
+      }
+    }
+  }
+  // topo
+
+  .sobre {
+    background: whitesmoke;
+    .sobre-img {
+      padding: 0px;
+      img {
+        height: 100%;
+        width: 100vw;
+        object-fit: cover;
+      }
+    }
+    .sobre-texto {
+      height: max-content;
+      padding: 15px;
+      font-size: 20px;
+      line-height: 1.5;
+      background-color: white;
+      color: $dark;
+      p {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  // sobre
+
+  .tecnica {
+    background-image: url("../../assets/images/Tecnicas/Fundo.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+
+    .tecnica-item {
+      margin: 50px 0px 50px 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      img {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      p {
+        display: inline-block;
+        color: white;
+        font-family: $font-default;
+        font-size: 1.5rem;
+      }
+    }
+
+    .tecnica-btn {
+      display: block;
+      background-color: $secondary;
+      color: $primary;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-family: $font-default;
+    }
+  }
+  // tecnica
+
+  .banner .container-video {
+    .row {
+      flex-direction: row-reverse;
+    }
+    height: 50vh;
+    h2 {
+      color: $white;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      color: $white;
+      img {
+        margin-right: 15px;
+      }
+    }
+  }
+  // video
+
+  .espaco {
+    background-color: $primary;
+    position: relative;
+    #espaco-wrapper {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 20px;
+      div[id^="espaco-item"] {
+        width: 100%;
+        height: 50vh;
+      }
+      #espaco-item1 {
+        background: url("../../assets/images/Espaço/Imagem3.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+      #espaco-item2 {
+        background: url("../../assets/images/Espaço/Imagem2.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+      #espaco-item3 {
+        background: url("../../assets/images/Espaço/Imagem1.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+  }
+  // espaco
+
+  .depoimentos {
+    .depoimentos-slider{
+      margin-top: 5vh 0 5vh 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .depoimento-card{
+        display: inline-block;
+        width: 100%;
+        margin: 0 25px;
+        .depoimento-card-conteudo{
+          display: flex;
+          flex-direction: row;
+          img{
+            height: 30px;
+            margin-right: 10px;
+          }
+        }
+        .depoimento-card-autor{
+          text-align: center;
+          &::before{
+            content: "";
+            display: inline-block;
+            position: static;
+            margin: 0px 10px 5px 0px;
+            width: 50px;
+            height: 5px;
+            background-color: $secondary;
+          }
+        }
+      }
+    }
+    .swiper-pagination{
+      bottom: -50px;
+    }
+  }
+  //
+  .depoimentos-slider {
+    margin-bottom: 116px;
+    position: relative;
+    z-index: 0;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: -60px;
+  }
+  .swiper-container-horizontal
+    > .swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 16px;
+  }
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    opacity: 10;
+    border: 1px solid $primary;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: $primary;
+  }
+  // configurações do swiper
+
+  .contato {
+    #simbolo {
+      display: none;
+    }
+    background-color: $primary;
+    p {
+      color: $white;
+      font-size: 1.7rem;
+      line-height: 1.5;
+    }
+    form {
+      margin: 50px 0 50px 0;
+    }
+    input,
+    textarea {
+      padding: 20px;
+      margin: 10px 0;
+      width: 100%;
+      resize: none;
+      background-color: transparent;
+      color: white;
+      border-radius: 5px;
+      box-shadow: none;
+      border: $secondary solid 2px;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: $white;
+        opacity: 1;
+      }
+    }
+    .btn-wrapper {
+      button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        background-color: $secondary;
+        color: $primary;
+        font-family: $font-default;
+      }
+    }
+  }
+  // contato
+}
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  .page-home {
+    .topo {
+      position: relative;
+      i {
+        @include box-i(absolute, 40vh);
+        background-position: center center;
+      }
+      .grid-container {
+        grid-template-columns: 85% 15%;
+        grid-template-rows: 50vh 20vh;
+        gap: 0px 0px;
+        .topo-chamada {
+          h1 {
+            font-size: 5.9rem;
+            line-height: 1.1;
+          }
+          p {
+            font-size: 2rem;
+            line-height: 3rem;
+          }
+        }
+        .topo-wzap {
+          a {
+            width: 55px;
+            height: 55px;
+            padding: 3px;
+          }
+        }
+      }
+    }
+    // topo
+    
+    .sobre {
+      .sobre-img {
+        height: 50vh;
+        img {
+          object-position: center 40%;
+        }
+      }
+      .sobre-texto {
+        padding: 35px;
+      }
+    }
+    // sobre
+    
+    .tecnica {
+      padding: 0px;
+      height: 100vh;
+      .titulo {
+        width: 100%;
+        margin-left: 10%;
+        margin-top: 0;
+      }
+      .tecnica-item {
+        margin-bottom: 50px;
+        p {
+          font-size: 2rem;
+        }
+      }
+      .tecnica-btn-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .tecnica-btn {
+          margin-top: 5%;
+          width: 250px;
+        }
+      }
+    }
+    // tecnica
+    
+    .banner .container-video {
+      height: 50vh;
+      h2 {
+        font-size: 4rem;
+        color: $black;
+      }
+      p {
+        color: $black;
+        margin-top: 20px;
+        font-size: 2rem;
+
+        img {
+          margin-right: 15px;
+        }
+      }
+    }
+    // banner
+    
+    .espaco {
+      background-color: $primary;
+      position: relative;
+      #espaco-wrapper {
+        padding: 0px 50px 0px 50px;
+
+        #espaco-item1 {
+          height: 100%;
+          grid-column: 1;
+          grid-row: 1/4;
+          grid-row-start: 2;
+        }
+        #espaco-item2 {
+          height: 100%;
+          grid-column: 2;
+          grid-row: 1/3;
+        }
+        #espaco-item3 {
+          height: 30vh;
+          grid-row: 3/4;
+          grid-column: 2;
+        }
+      }
+    }
+    // espaco
+
+    .depoimentos{
+      height: 75vh;
+      .depoimentos-slider{
+        margin: 100px 0 100px 0;
+        font-size: 1.5rem;
+      }
+    }
+    // depoimentos
+
+    .contato {
+      height: 100vh;
+      #simbolo {
+        position: absolute;
+        display: block;
+        height: 80%;
+        right: 0px;
+        bottom: 0px;
+      }
+      form {
+        margin-top: 150px;
+      }
+      p {
+        margin-top: 50px;
+        padding-right: 50px;
+      }
+      input,
+      textarea {
+        border: none;
+        border-bottom: $secondary solid 2px;
+      }
+      .btn-wrapper {
+        width: 100%;
+        text-align: right;
+        button {
+          width: 30%;
+        }
+      }
+    }
+    // contato
+  }
+}
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  .page-home {
+    .header {
+      .navbar {
+        padding: 30px 30px;
+      }
+    }
+
+    .topo {
+      height: 100vh;
+      i {
+        @include box-i(absolute, 100vh);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left top;
+      }
+      .grid-container {
+        padding-top: 132px;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 55% 35% 10%;
+        grid-template-rows: 100%;
+        gap: 0px 0px;
+        grid-template-areas: ". topo-chamada-desktop topo-rs-desktop";
+        .topo-chamada {
+          grid-area: topo-chamada-desktop;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0;
+          p {
+            font-size: 3.2rem;
+            line-height: 4.2rem;
+            letter-spacing: 0.02em;
+          }
+        }
+        .topo-wzap {
+          margin-right: 20px;
+          margin-bottom: 25px;
+          a img {
+            width: 80px;
+          }
+        }
+      }
+    }
+    // .topo
+    .sobre {
+      .sobre-img {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          height: 75%;
+          width: 50vw;
+          object-fit: cover;
+        }
+      }
+      .sobre-texto {
+        height: fit-content;
+        margin-top: 2%;
+        p {
+          font-size: 1.5rem;
+          padding-left: 100px;
+          padding-right: 5%;
+        }
+      }
+    }
+    // sobre
+    .tecnica {
+      .titulo {
+        width: 100%;
+        margin-left: 25%;
+      }
+      .tecnica-item {
+        p {
+          font-size: 2.5rem;
+        }
+        img {
+          height: 70px;
+        }
+      }
+    }
+    // tecnica
+    .espaco {
+      #espaco-wrapper {
+        padding: 0px 15% 0 15%;
+      }
+    }
+    // espaco
+    .contato {
+      min-height: 100vh;
+      height: auto;
+      p {
+        margin-top: 80px;
+        padding-left: 100px;
+        font-size: 2rem;
+      }
+      form {
+        margin-top: 150px;
+        margin-right: 150px;
+        padding-left: 50px;
+        input,
+        textarea {
+          margin-top: 50px;
+          &::placeholder {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+    // contato
+  }
+}
+// 992px
+
+// Controle para telas grandes full hd
+@media (min-width: 1440px) {
+  .page-home {
+    .topo {
+      .grid-container {
+        .topo-chamada {
+          padding: 0 0 0 70px;
+          h1 {
+            width: 85%;
+          }
+          p {
+            width: 65%;
+          }
+        }
+      }
+    }
+    .sobre {
+      .sobre-img {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          height: 75%;
+          width: 100vw;
+          object-fit: cover;
+        }
+      }
+      .sobre-texto {
+        width: 50%;
+        height: fit-content;
+        margin-top: 2%;
+        p {
+          font-size: 2rem;
+          padding-left: 100px;
+          padding-right: 5%;
+        }
+      }
+    }
+  }
+}
+// 1470px
+
+// Controle para telas notbook de altura de 768px
+@media (max-height: 768px) {
+  .page-home {
+    .topo {
+      height: 100vh;
+    }
+  }
+}

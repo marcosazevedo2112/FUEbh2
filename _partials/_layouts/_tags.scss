@@ -1,0 +1,40 @@
+.page-tags {
+  .tags {
+    &__card {
+      margin-bottom: 80px;
+      a {
+        span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 36px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #b8623d;
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 36px;
+          line-height: 36px;
+          letter-spacing: 0.02em;
+          color: #b8623d;
+          margin-bottom: 20px;
+        }
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 36px;
+          letter-spacing: 0.02em;
+          color: #2d1505;
+        }
+      }
+    }
+  }
+  .dicas {
+    position: relative;
+    background-color: #f8ebdb;
+  }
+}

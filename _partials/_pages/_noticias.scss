@@ -1,0 +1,253 @@
+.page-noticias {
+  position: relative;
+  .wrap-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+    margin-bottom: 74px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    a {
+      text-align: center;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 29px;
+      color: #d29e7e;
+      margin: 20px 16px;
+      &:hover {
+        transition: all 0.2s ease-in-out;
+        text-decoration: underline;
+      }
+    }
+  }
+  .dicas .dicas-slider a {
+    min-height: 530px;
+    margin-bottom: 45px;
+  }
+  .dicas-slider {
+    margin-bottom: 80px;
+  }
+  .tratamentos-card {
+    background-color: #fff;
+    padding: 0;
+    border-radius: 30px;
+    overflow: hidden;
+    height: max-content;
+    margin-bottom: 30px;
+    display: block;
+    .tratamentos-card_foto {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.single-noticias {
+  position: relative;
+  .banner-topo {
+    h1 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 38px;
+      line-height: 44px;
+      color: #ffffff;
+    }
+  }
+  .content {
+    .tags-box {
+      position: relative;
+      z-index: 4;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 60px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      padding-bottom: 35px;
+      text-align: center;
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #c4c4c4;
+      }
+      .wrap-tags {
+        display: flex;
+        flex-direction: row;
+        a {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 24px;
+          color: #b8623d;
+          margin: 0 20px;
+          &:hover {
+            text-decoration: underline;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+    .img-destaque {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+    img {
+      border-radius: 30px;
+    }
+  }
+  .compartilhar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 0;
+    span {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.3em;
+      color: #b8623d;
+      margin-bottom: 30px;
+    }
+    &__wrap {
+      display: flex;
+      flex-direction: row;
+      a {
+        display: block;
+        width: 51px;
+        height: 51px;
+        text-decoration: none;
+        margin: 0 15px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  .page-noticias {
+    position: relative;
+    .wrap-category {
+      justify-content: center;
+      margin-bottom: 74px;
+      overflow-x: hidden;
+      a {
+        margin: 0 16px;
+      }
+    }
+    .dicas-slider {
+      margin-bottom: 80px;
+    }
+    .tratamentos-card {
+      background-color: #fff;
+      padding: 0;
+      border-radius: 30px;
+      overflow: hidden;
+      height: 100%;
+      margin-bottom: 30px;
+      display: block;
+      .tratamentos-card_foto {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .single-noticias {
+    position: relative;
+    .banner-topo {
+      h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 58px;
+        line-height: 72px;
+        color: #ffffff;
+      }
+    }
+    .content {
+      .tags-box {
+        position: relative;
+        z-index: 4;
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden;
+        padding-bottom: 0;
+        span {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #c4c4c4;
+        }
+        .wrap-tags {
+          display: flex;
+          flex-direction: row;
+          a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 24px;
+            color: #b8623d;
+            margin: 0 20px;
+            &:hover {
+              text-decoration: underline;
+              transition: all 0.2s ease-in-out;
+            }
+          }
+        }
+      }
+      .img-destaque {
+        border-radius: 30px;
+      }
+      img {
+        border-radius: 30px;
+      }
+    }
+    .compartilhar {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 120px 0 0;
+      span {
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: 0;
+      }
+      &__wrap {
+        display: flex;
+        flex-direction: row;
+        a {
+          display: block;
+          width: 51px;
+          height: 51px;
+          text-decoration: none;
+          margin: 0 15px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+// 992px

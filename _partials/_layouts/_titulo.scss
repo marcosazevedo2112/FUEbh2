@@ -1,0 +1,63 @@
+.titulo{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-family: $font-default;
+  display: inline-block;
+  h1{
+    margin-left: 0;
+    padding-left: 0;
+  }
+  &.invertido{
+    h3{
+      color: $white;
+    }
+    h1{
+      color: $white;
+    };
+  }
+}
+
+/*
+=====================================================
+Large devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(md){
+  .titulo{
+    margin-top: 0;
+    margin-bottom: 0;
+    h1{
+      line-height: normal;
+      font-size: 6rem;
+    }
+    h3{
+      font-size: 2.5rem;
+    }
+  }
+}
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg){
+  .titulo{
+    margin-left: 100px;
+    margin-bottom: 0;
+    h1{
+      font-size: 4rem;
+      line-height: normal;
+    }
+    &::before{
+      content: "";
+      display: inline-block;
+      position: static;
+      margin: -20px -100px;
+      width: 80px;
+      height: 10px;
+      background-color: $secondary;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+// padrao para cards de tratamentos
+.tratamentos {
+  position: relative;
+  background: #fbf3e9;
+  a {
+    text-decoration: none;
+    margin-bottom: 30px;
+  }
+  a:hover .tratamentos-card_foto {
+    opacity: 0.8;
+  }
+  a:hover &-card {
+    background-color: #f8ebdb;
+  }
+  &-card {
+    background-color: #fff;
+    padding: 0;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 100%;
+  }
+  &-card_foto {
+    background-color: #fff;
+    img {
+      mix-blend-mode: multiply;
+    }
+  }
+  &-card_text {
+    padding: 15px 20px 15px 20px;
+    h2 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2.2rem;
+      line-height: 3.2rem;
+      color: #c8a97b;
+      margin-bottom: 25px;
+    }
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      letter-spacing: 0.02em;
+      color: #2d1505;
+    }
+  }
+}
+// tratamentos-box
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  .tratamentos {
+    &-card_text {
+      padding: 35px;
+    }
+  }
+}
+// 992px
