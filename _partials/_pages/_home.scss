@@ -2,7 +2,7 @@
   .topo {
     position: relative;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 50px);
     i {
       @include box-i(absolute, 50vh);
       background-size: cover;
@@ -14,33 +14,40 @@
     .grid-container {
       position: relative;
       z-index: 1;
-
+      height: 100%;
       display: grid;
-      grid-template-columns: 75% 25%;
-      grid-template-rows: 50vh 50vh;
+      grid-template-columns: 100%;
+      grid-template-rows: 50vh auto;
       gap: 0px 0px;
       grid-template-areas:
         ". topo-rs"
         "topo-chamada topo-wzap";
-      .topo-chamada {
+      .wrapper-chamada{
+        width: 100%;
+        height: auto;
         grid-area: topo-chamada;
-        padding: 30px 0 30px 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: min-content;
-        h1 {
-          color: $secondary;
-          font-size: 4rem;
-          line-height: 1.1;
-        }
-        p {
-          font-style: normal;
-          font-weight: 400;
-          font-size: 2rem;
-          line-height: 3rem;
-          letter-spacing: 0.02em;
-          color: #707070;
+        .topo-chamada {
+          padding: 0 0 0px 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: min-content;
+          h1 {
+            color: $secondary;
+            font-size: 3.5rem;
+            line-height: 1.1;
+          }
+          p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: 0.02em;
+            color: #707070;
+          }
         }
       }
 
@@ -58,24 +65,28 @@
   // topo
 
   .sobre {
-    background: whitesmoke;
-    .sobre-img {
-      padding: 0px;
-      img {
-        height: 100%;
-        width: 100vw;
-        object-fit: cover;
+    background: white;
+    .row{
+      margin: 0;
+      .sobre-img {
+        padding: 0px;
+        img {
+          margin-left: -15px;
+          height: 100%;
+          width: 100vw;
+          object-fit: cover;
+        }
       }
-    }
-    .sobre-texto {
-      height: max-content;
-      padding: 15px;
-      font-size: 20px;
-      line-height: 1.5;
-      background-color: white;
-      color: $dark;
-      p {
-        margin-bottom: 25px;
+      .sobre-texto {
+        height: max-content;
+        padding: 15px;
+        font-size: 20px;
+        line-height: 1.5;
+        background-color: white;
+        color: $dark;
+        p {
+          margin-bottom: 25px;
+        }
       }
     }
   }
@@ -124,17 +135,19 @@
   .banner .container-video {
     .row {
       flex-direction: row-reverse;
-    }
-    height: 50vh;
-    h2 {
-      color: $white;
-    }
-    p {
-      margin-top: 10px;
-      font-size: 1.5rem;
-      color: $white;
-      img {
-        margin-right: 15px;
+      h2 {
+        margin-top: 10%;
+        font-weight: 400;
+        color: $white;
+        font-size: 3.5rem;
+      }
+      p {
+        margin: 10% 0;
+        font-size: 1.5rem;
+        color: $white;
+        img {
+          margin-right: 15px;
+        }
       }
     }
   }
@@ -145,26 +158,12 @@
     position: relative;
     #espaco-wrapper {
       display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: 20px;
-      div[id^="espaco-item"] {
+      grid-template-rows: 1fr 1fr;
+      gap: 30px;
+      img{
         width: 100%;
-        height: 50vh;
-      }
-      #espaco-item1 {
-        background: url("../../assets/images/Espaço/Imagem3.png") no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-      #espaco-item2 {
-        background: url("../../assets/images/Espaço/Imagem2.png") no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-      #espaco-item3 {
-        background: url("../../assets/images/Espaço/Imagem1.png") no-repeat;
-        background-position: center center;
-        background-size: cover;
+        height: auto;
+        object-fit: cover;  
       }
     }
   }
@@ -180,6 +179,7 @@
         display: inline-block;
         width: 100%;
         margin: 0 25px;
+        font-size: 1.5rem;
         .depoimento-card-conteudo{
           display: flex;
           flex-direction: row;
@@ -203,7 +203,7 @@
       }
     }
     .swiper-pagination{
-      bottom: -50px;
+      bottom: -80px;
     }
   }
   //
@@ -258,11 +258,13 @@
       color: white;
       border-radius: 5px;
       box-shadow: none;
-      border: $secondary solid 2px;
+      border: none;
+      border-bottom: $secondary solid 2px;
       &:focus {
         outline: none;
       }
       &::placeholder {
+        font-size: 1.4rem;
         color: $white;
         opacity: 1;
       }
@@ -296,17 +298,27 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
         background-position: center center;
       }
       .grid-container {
-        grid-template-columns: 85% 15%;
-        grid-template-rows: 50vh 20vh;
+        height: 100%;
+        grid-template-columns: 100%;
+        grid-template-rows: 40vh auto;
         gap: 0px 0px;
-        .topo-chamada {
-          h1 {
-            font-size: 5.9rem;
-            line-height: 1.1;
-          }
-          p {
-            font-size: 2rem;
-            line-height: 3rem;
+        .wrapper-chamada{
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .topo-chamada {
+            padding-top: 0%;
+            padding-bottom: 0%;
+            height: 100%;
+            h1 {
+              font-size: 5.9rem;
+              line-height: 1.1;
+            }
+            p {
+              font-size: 2rem;
+              line-height: 3rem;
+            }
           }
         }
         .topo-wzap {
@@ -321,30 +333,34 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     // topo
     
     .sobre {
-      .sobre-img {
-        height: 50vh;
-        img {
-          object-position: center 40%;
+      .row{
+        .sobre-img {
+          height: 100%;
+          margin-left: -24px;
+          img {
+            object-position: center 40%;
+          }
         }
-      }
-      .sobre-texto {
-        padding: 35px;
+        .sobre-texto{
+          padding: 45px 0px;
+        }
       }
     }
     // sobre
     
     .tecnica {
-      padding: 0px;
-      height: 100vh;
+      padding: 100px 0px;
       .titulo {
         width: 100%;
-        margin-left: 10%;
-        margin-top: 0;
       }
-      .tecnica-item {
-        margin-bottom: 50px;
-        p {
-          font-size: 2rem;
+      .row{
+        display: flex;
+        justify-content: center;
+        .tecnica-item {
+          margin-bottom: 50px;
+          p {
+            font-size: 2rem;
+          }
         }
       }
       .tecnica-btn-wrapper {
@@ -354,25 +370,29 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
         align-items: center;
         .tecnica-btn {
           margin-top: 5%;
-          width: 250px;
+          width: 150px;
         }
       }
     }
     // tecnica
     
     .banner .container-video {
-      height: 50vh;
-      h2 {
-        font-size: 4rem;
-        color: $black;
-      }
-      p {
-        color: $black;
-        margin-top: 20px;
-        font-size: 2rem;
-
-        img {
-          margin-right: 15px;
+      padding: 20px;
+      .row{
+        h2 {
+          font-size: 3rem;
+          line-height: normal;
+          color: $black;
+          margin-top: 10%;
+        }
+        p {
+          color: $black;
+          margin: 15% 0;
+          font-size: 1.5rem;
+  
+          img {
+            height: 40px;
+          }
         }
       }
     }
@@ -381,8 +401,13 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     .espaco {
       background-color: $primary;
       position: relative;
+      .titulo{
+        width: max-content;        
+      }
       #espaco-wrapper {
+        grid-template-rows: 1fr 1fr 1fr;
         padding: 0px 50px 0px 50px;
+        margin-top: -9.7rem; // Tamanho do titulo (soma das alturas do h1, h3 e margens do h1)
 
         #espaco-item1 {
           height: 100%;
@@ -405,16 +430,17 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     // espaco
 
     .depoimentos{
-      height: 75vh;
       .depoimentos-slider{
         margin: 100px 0 100px 0;
         font-size: 1.5rem;
+      }
+      .swiper-pagination{
+        bottom: -100px;
       }
     }
     // depoimentos
 
     .contato {
-      height: 100vh;
       #simbolo {
         position: absolute;
         display: block;
@@ -422,23 +448,31 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
         right: 0px;
         bottom: 0px;
       }
-      form {
-        margin-top: 150px;
-      }
-      p {
+      .row{
         margin-top: 50px;
-        padding-right: 50px;
-      }
-      input,
-      textarea {
-        border: none;
-        border-bottom: $secondary solid 2px;
-      }
-      .btn-wrapper {
-        width: 100%;
-        text-align: right;
-        button {
-          width: 30%;
+        p {
+          padding-right: 50px;
+        }
+        
+        .wrapper-form{
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          form {
+            margin: 0;
+            width: 100%;
+            input#nome{
+              margin-top: 0;
+            }
+            .btn-wrapper {
+              width: 100%;
+              text-align: right;
+              button {
+                width: 30%;
+              }
+            }
+          }
         }
       }
     }
@@ -470,7 +504,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
         background-position: left top;
       }
       .grid-container {
-        padding-top: 132px;
         height: 100vh;
         position: relative;
         z-index: 1;
@@ -479,16 +512,23 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
         grid-template-rows: 100%;
         gap: 0px 0px;
         grid-template-areas: ". topo-chamada-desktop topo-rs-desktop";
-        .topo-chamada {
+        .wrapper-chamada{
           grid-area: topo-chamada-desktop;
+          height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          padding: 0;
-          p {
-            font-size: 3.2rem;
-            line-height: 4.2rem;
-            letter-spacing: 0.02em;
+          align-items: center;
+          topo-chamada {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0;
+            p {
+              font-size: 3.2rem;
+              line-height: 4.2rem;
+              letter-spacing: 0.02em;
+            }
           }
         }
         .topo-wzap {
@@ -502,66 +542,83 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     }
     // .topo
     .sobre {
-      .sobre-img {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img {
-          height: 75%;
-          width: 50vw;
-          object-fit: cover;
+      background-color: whitesmoke;
+      .row{
+        .sobre-img {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          img {
+            height: 60%;
+            object-fit: cover;
+            margin-bottom: 15%;
+          }
         }
-      }
-      .sobre-texto {
-        height: fit-content;
-        margin-top: 2%;
-        p {
-          font-size: 1.5rem;
-          padding-left: 100px;
-          padding-right: 5%;
+        .sobre-texto {
+          margin-left: 20px;
+          padding-left: 30px;
+          height: fit-content;
+          margin-top: 3%;
+          width: 100%;
+          p {
+            font-size: 1.5rem;
+            padding-left: 100px;
+            padding-right: 5%;
+          }
+          .titulo{
+            margin-left: 100px;
+          }
         }
       }
     }
     // sobre
     .tecnica {
-      .titulo {
-        width: 100%;
-        margin-left: 25%;
-      }
-      .tecnica-item {
-        p {
-          font-size: 2.5rem;
-        }
-        img {
-          height: 70px;
+      .row{
+        margin-top: 50px;
+        .tecnica-item {
+          p {
+            font-size: 3rem;
+          }
         }
       }
     }
     // tecnica
-    .espaco {
-      #espaco-wrapper {
-        padding: 0px 15% 0 15%;
+    .banner .container-video {
+      .row{
+        h2{
+          font-size: 4.5rem;
+        }
+        p{
+          img{
+            height: 100%;
+          }
+        }
       }
     }
-    // espaco
+    // banner
     .contato {
-      min-height: 100vh;
       height: auto;
-      p {
-        margin-top: 80px;
-        padding-left: 100px;
-        font-size: 2rem;
-      }
-      form {
-        margin-top: 150px;
-        margin-right: 150px;
-        padding-left: 50px;
-        input,
-        textarea {
-          margin-top: 50px;
-          &::placeholder {
-            font-size: 1.6rem;
+      .row{
+        margin-top: 100px;
+        p {
+          font-size: 2rem;
+        }
+        .wrapper-form{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          form {
+            padding-left: 50px;
+            input,
+            textarea {
+              
+              &::placeholder {
+                font-size: 1.6rem;
+              }
+            }
           }
         }
       }
@@ -610,15 +667,17 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
         }
       }
     }
-  }
-}
-// 1470px
-
-// Controle para telas notbook de altura de 768px
-@media (max-height: 768px) {
-  .page-home {
-    .topo {
-      height: 100vh;
+    .banner .container-video{
+      .row{
+        h2{
+          font-size: 5rem;
+        }
+        p{
+          font-size: 2rem;
+          margin: 20% 0;
+        }
+      }
     }
   }
 }
+// 1470px

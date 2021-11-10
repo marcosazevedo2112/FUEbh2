@@ -2,17 +2,21 @@
 footer{
     text-align: left;
     margin: 50px 0px;
-    margin-left: 50px;
     .row{
+      text-align: center;
       #logo-footer{
-        width: 70vw;
+        width: 60%;
         margin-bottom: 50px;
       }
       ul{
         text-align: left;
         li{
           margin-top: 30px;
+          font-size: 1.5rem;
           img{
+            width: 50px;
+            height: 30px;
+            object-fit: contain;
             margin-right: 15px;
           }
         }
@@ -58,6 +62,9 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
       }
       .barra-footer{
         height: 150px;
+        #privacidade-wrapper{
+          text-align: left;
+        }
       }
 }
 

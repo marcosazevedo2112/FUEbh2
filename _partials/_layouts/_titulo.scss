@@ -1,4 +1,6 @@
 .titulo{
+  position: relative;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 30px;
   font-family: $font-default;
@@ -6,6 +8,12 @@
   h1{
     margin-left: 0;
     padding-left: 0;
+    font-size: 3rem;
+    line-height: normal;
+  }
+  h3{
+    font-size: 1.5rem;
+    margin-bottom: 0px;
   }
   &.invertido{
     h3{
@@ -14,6 +22,15 @@
     h1{
       color: $white;
     };
+  }
+  &::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -90px;
+    width: 80px;
+    height: 1.5rem;
+    background-color: $secondary;
   }
 }
 
@@ -29,10 +46,15 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     margin-bottom: 0;
     h1{
       line-height: normal;
-      font-size: 6rem;
+      font-size: 4rem;
     }
     h3{
-      font-size: 2.5rem;
+      font-size: 1.5rem;
+    }
+    &::before{
+      left: -170px;
+      width: 150px;
+      height: 1.5rem;
     }
   }
 }
@@ -44,19 +66,22 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 @include media-breakpoint-up(lg){
   .titulo{
-    margin-left: 100px;
+    position: relative;
     margin-bottom: 0;
     h1{
-      font-size: 4rem;
+      font-size: 4.5rem;
       line-height: normal;
+    }
+    h3{
+      font-size: 1.4rem;
     }
     &::before{
       content: "";
       display: inline-block;
-      position: static;
-      margin: -20px -100px;
+      position: absolute;
+      left: -100px;
       width: 80px;
-      height: 10px;
+      height: 1.4rem;
       background-color: $secondary;
     }
   }

@@ -12561,10 +12561,12 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 footer {
   text-align: left;
   margin: 50px 0px;
-  margin-left: 50px;
+}
+footer .row {
+  text-align: center;
 }
 footer .row #logo-footer {
-  width: 70vw;
+  width: 60%;
   margin-bottom: 50px;
 }
 footer .row ul {
@@ -12572,8 +12574,12 @@ footer .row ul {
 }
 footer .row ul li {
   margin-top: 30px;
+  font-size: 1.5rem;
 }
 footer .row ul li img {
+  width: 50px;
+  height: 30px;
+  object-fit: contain;
   margin-right: 15px;
 }
 
@@ -12616,6 +12622,9 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 
   .barra-footer {
     height: 150px;
+  }
+  .barra-footer #privacidade-wrapper {
+    text-align: left;
   }
 }
 /*
@@ -13705,6 +13714,8 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 }
 
 .titulo {
+  position: relative;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 30px;
   font-family: "Oxygen", sans-serif;
@@ -13713,12 +13724,27 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 .titulo h1 {
   margin-left: 0;
   padding-left: 0;
+  font-size: 3rem;
+  line-height: normal;
+}
+.titulo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0px;
 }
 .titulo.invertido h3 {
   color: #ffffff;
 }
 .titulo.invertido h1 {
   color: #ffffff;
+}
+.titulo::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -90px;
+  width: 80px;
+  height: 1.5rem;
+  background-color: #f0d47c;
 }
 
 /*
@@ -13734,10 +13760,15 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   }
   .titulo h1 {
     line-height: normal;
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .titulo h3 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+  .titulo::before {
+    left: -170px;
+    width: 150px;
+    height: 1.5rem;
   }
 }
 /*
@@ -13748,27 +13779,30 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 @media (min-width: 992px) {
   .titulo {
-    margin-left: 100px;
+    position: relative;
     margin-bottom: 0;
   }
   .titulo h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     line-height: normal;
+  }
+  .titulo h3 {
+    font-size: 1.4rem;
   }
   .titulo::before {
     content: "";
     display: inline-block;
-    position: static;
-    margin: -20px -100px;
+    position: absolute;
+    left: -100px;
     width: 80px;
-    height: 10px;
+    height: 1.4rem;
     background-color: #f0d47c;
   }
 }
 .page-home .topo {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 50px);
 }
 .page-home .topo i {
   display: block;
@@ -13784,26 +13818,34 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 .page-home .topo .grid-container {
   position: relative;
   z-index: 1;
+  height: 100%;
   display: grid;
-  grid-template-columns: 75% 25%;
-  grid-template-rows: 50vh 50vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 50vh auto;
   gap: 0px 0px;
   grid-template-areas: ". topo-rs" "topo-chamada topo-wzap";
 }
-.page-home .topo .grid-container .topo-chamada {
+.page-home .topo .grid-container .wrapper-chamada {
+  width: 100%;
+  height: auto;
   grid-area: topo-chamada;
-  padding: 30px 0 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-home .topo .grid-container .wrapper-chamada .topo-chamada {
+  padding: 0 0 0px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: min-content;
 }
-.page-home .topo .grid-container .topo-chamada h1 {
+.page-home .topo .grid-container .wrapper-chamada .topo-chamada h1 {
   color: #f0d47c;
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1.1;
 }
-.page-home .topo .grid-container .topo-chamada p {
+.page-home .topo .grid-container .wrapper-chamada .topo-chamada p {
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;
@@ -13821,17 +13863,21 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   width: 50px;
 }
 .page-home .sobre {
-  background: whitesmoke;
+  background: white;
 }
-.page-home .sobre .sobre-img {
+.page-home .sobre .row {
+  margin: 0;
+}
+.page-home .sobre .row .sobre-img {
   padding: 0px;
 }
-.page-home .sobre .sobre-img img {
+.page-home .sobre .row .sobre-img img {
+  margin-left: -15px;
   height: 100%;
   width: 100vw;
   object-fit: cover;
 }
-.page-home .sobre .sobre-texto {
+.page-home .sobre .row .sobre-texto {
   height: max-content;
   padding: 15px;
   font-size: 20px;
@@ -13839,7 +13885,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   background-color: white;
   color: #707070;
 }
-.page-home .sobre .sobre-texto p {
+.page-home .sobre .row .sobre-texto p {
   margin-bottom: 25px;
 }
 .page-home .tecnica {
@@ -13878,21 +13924,21 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   margin-bottom: 15px;
   font-family: "Oxygen", sans-serif;
 }
-.page-home .banner .container-video, .page-home .banner-topo .container-video {
-  height: 50vh;
-}
 .page-home .banner .container-video .row, .page-home .banner-topo .container-video .row {
   flex-direction: row-reverse;
 }
-.page-home .banner .container-video h2, .page-home .banner-topo .container-video h2 {
+.page-home .banner .container-video .row h2, .page-home .banner-topo .container-video .row h2 {
+  margin-top: 10%;
+  font-weight: 400;
   color: #ffffff;
+  font-size: 3.5rem;
 }
-.page-home .banner .container-video p, .page-home .banner-topo .container-video p {
-  margin-top: 10px;
+.page-home .banner .container-video .row p, .page-home .banner-topo .container-video .row p {
+  margin: 10% 0;
   font-size: 1.5rem;
   color: #ffffff;
 }
-.page-home .banner .container-video p img, .page-home .banner-topo .container-video p img {
+.page-home .banner .container-video .row p img, .page-home .banner-topo .container-video .row p img {
   margin-right: 15px;
 }
 .page-home .espaco {
@@ -13901,27 +13947,13 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 }
 .page-home .espaco #espaco-wrapper {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
 }
-.page-home .espaco #espaco-wrapper div[id^=espaco-item] {
+.page-home .espaco #espaco-wrapper img {
   width: 100%;
-  height: 50vh;
-}
-.page-home .espaco #espaco-wrapper #espaco-item1 {
-  background: url("../../assets/images/Espaço/Imagem3.png") no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-.page-home .espaco #espaco-wrapper #espaco-item2 {
-  background: url("../../assets/images/Espaço/Imagem2.png") no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-.page-home .espaco #espaco-wrapper #espaco-item3 {
-  background: url("../../assets/images/Espaço/Imagem1.png") no-repeat;
-  background-position: center center;
-  background-size: cover;
+  height: auto;
+  object-fit: cover;
 }
 .page-home .depoimentos .depoimentos-slider {
   margin-top: 5vh 0 5vh 0;
@@ -13933,6 +13965,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   display: inline-block;
   width: 100%;
   margin: 0 25px;
+  font-size: 1.5rem;
 }
 .page-home .depoimentos .depoimentos-slider .depoimento-card .depoimento-card-conteudo {
   display: flex;
@@ -13955,7 +13988,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   background-color: #f0d47c;
 }
 .page-home .depoimentos .swiper-pagination {
-  bottom: -50px;
+  bottom: -80px;
 }
 .page-home .depoimentos-slider {
   margin-bottom: 116px;
@@ -14005,7 +14038,8 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   color: white;
   border-radius: 5px;
   box-shadow: none;
-  border: #f0d47c solid 2px;
+  border: none;
+  border-bottom: #f0d47c solid 2px;
 }
 .page-home .contato input:focus,
 .page-home .contato textarea:focus {
@@ -14013,6 +14047,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 }
 .page-home .contato input::placeholder,
 .page-home .contato textarea::placeholder {
+  font-size: 1.4rem;
   color: #ffffff;
   opacity: 1;
 }
@@ -14045,15 +14080,27 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     background-position: center center;
   }
   .page-home .topo .grid-container {
-    grid-template-columns: 85% 15%;
-    grid-template-rows: 50vh 20vh;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 40vh auto;
     gap: 0px 0px;
   }
-  .page-home .topo .grid-container .topo-chamada h1 {
+  .page-home .topo .grid-container .wrapper-chamada {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .page-home .topo .grid-container .wrapper-chamada .topo-chamada {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    height: 100%;
+  }
+  .page-home .topo .grid-container .wrapper-chamada .topo-chamada h1 {
     font-size: 5.9rem;
     line-height: 1.1;
   }
-  .page-home .topo .grid-container .topo-chamada p {
+  .page-home .topo .grid-container .wrapper-chamada .topo-chamada p {
     font-size: 2rem;
     line-height: 3rem;
   }
@@ -14062,28 +14109,30 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     height: 55px;
     padding: 3px;
   }
-  .page-home .sobre .sobre-img {
-    height: 50vh;
+  .page-home .sobre .row .sobre-img {
+    height: 100%;
+    margin-left: -24px;
   }
-  .page-home .sobre .sobre-img img {
+  .page-home .sobre .row .sobre-img img {
     object-position: center 40%;
   }
-  .page-home .sobre .sobre-texto {
-    padding: 35px;
+  .page-home .sobre .row .sobre-texto {
+    padding: 45px 0px;
   }
   .page-home .tecnica {
-    padding: 0px;
-    height: 100vh;
+    padding: 100px 0px;
   }
   .page-home .tecnica .titulo {
     width: 100%;
-    margin-left: 10%;
-    margin-top: 0;
   }
-  .page-home .tecnica .tecnica-item {
+  .page-home .tecnica .row {
+    display: flex;
+    justify-content: center;
+  }
+  .page-home .tecnica .row .tecnica-item {
     margin-bottom: 50px;
   }
-  .page-home .tecnica .tecnica-item p {
+  .page-home .tecnica .row .tecnica-item p {
     font-size: 2rem;
   }
   .page-home .tecnica .tecnica-btn-wrapper {
@@ -14094,29 +14143,36 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   }
   .page-home .tecnica .tecnica-btn-wrapper .tecnica-btn {
     margin-top: 5%;
-    width: 250px;
+    width: 150px;
   }
   .page-home .banner .container-video, .page-home .banner-topo .container-video {
-    height: 50vh;
+    padding: 20px;
   }
-  .page-home .banner .container-video h2, .page-home .banner-topo .container-video h2 {
-    font-size: 4rem;
+  .page-home .banner .container-video .row h2, .page-home .banner-topo .container-video .row h2 {
+    font-size: 3rem;
+    line-height: normal;
     color: #000;
+    margin-top: 10%;
   }
-  .page-home .banner .container-video p, .page-home .banner-topo .container-video p {
+  .page-home .banner .container-video .row p, .page-home .banner-topo .container-video .row p {
     color: #000;
-    margin-top: 20px;
-    font-size: 2rem;
+    margin: 15% 0;
+    font-size: 1.5rem;
   }
-  .page-home .banner .container-video p img, .page-home .banner-topo .container-video p img {
-    margin-right: 15px;
+  .page-home .banner .container-video .row p img, .page-home .banner-topo .container-video .row p img {
+    height: 40px;
   }
   .page-home .espaco {
     background-color: #2b3240;
     position: relative;
   }
+  .page-home .espaco .titulo {
+    width: max-content;
+  }
   .page-home .espaco #espaco-wrapper {
+    grid-template-rows: 1fr 1fr 1fr;
     padding: 0px 50px 0px 50px;
+    margin-top: -9.7rem;
   }
   .page-home .espaco #espaco-wrapper #espaco-item1 {
     height: 100%;
@@ -14134,15 +14190,12 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     grid-row: 3/4;
     grid-column: 2;
   }
-  .page-home .depoimentos {
-    height: 75vh;
-  }
   .page-home .depoimentos .depoimentos-slider {
     margin: 100px 0 100px 0;
     font-size: 1.5rem;
   }
-  .page-home .contato {
-    height: 100vh;
+  .page-home .depoimentos .swiper-pagination {
+    bottom: -100px;
   }
   .page-home .contato #simbolo {
     position: absolute;
@@ -14151,23 +14204,30 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     right: 0px;
     bottom: 0px;
   }
-  .page-home .contato form {
-    margin-top: 150px;
-  }
-  .page-home .contato p {
+  .page-home .contato .row {
     margin-top: 50px;
+  }
+  .page-home .contato .row p {
     padding-right: 50px;
   }
-  .page-home .contato input,
-.page-home .contato textarea {
-    border: none;
-    border-bottom: #f0d47c solid 2px;
+  .page-home .contato .row .wrapper-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
   }
-  .page-home .contato .btn-wrapper {
+  .page-home .contato .row .wrapper-form form {
+    margin: 0;
+    width: 100%;
+  }
+  .page-home .contato .row .wrapper-form form input#nome {
+    margin-top: 0;
+  }
+  .page-home .contato .row .wrapper-form form .btn-wrapper {
     width: 100%;
     text-align: right;
   }
-  .page-home .contato .btn-wrapper button {
+  .page-home .contato .row .wrapper-form form .btn-wrapper button {
     width: 30%;
   }
 }
@@ -14196,7 +14256,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     background-position: left top;
   }
   .page-home .topo .grid-container {
-    padding-top: 132px;
     height: 100vh;
     position: relative;
     z-index: 1;
@@ -14206,14 +14265,21 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     gap: 0px 0px;
     grid-template-areas: ". topo-chamada-desktop topo-rs-desktop";
   }
-  .page-home .topo .grid-container .topo-chamada {
+  .page-home .topo .grid-container .wrapper-chamada {
     grid-area: topo-chamada-desktop;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-home .topo .grid-container .wrapper-chamada topo-chamada {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0;
   }
-  .page-home .topo .grid-container .topo-chamada p {
+  .page-home .topo .grid-container .wrapper-chamada topo-chamada p {
     font-size: 3.2rem;
     line-height: 4.2rem;
     letter-spacing: 0.02em;
@@ -14225,59 +14291,68 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   .page-home .topo .grid-container .topo-wzap a img {
     width: 80px;
   }
-  .page-home .sobre .sobre-img {
+  .page-home .sobre {
+    background-color: whitesmoke;
+  }
+  .page-home .sobre .row .sobre-img {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
-  .page-home .sobre .sobre-img img {
-    height: 75%;
-    width: 50vw;
+  .page-home .sobre .row .sobre-img img {
+    height: 60%;
     object-fit: cover;
+    margin-bottom: 15%;
   }
-  .page-home .sobre .sobre-texto {
+  .page-home .sobre .row .sobre-texto {
+    margin-left: 20px;
+    padding-left: 30px;
     height: fit-content;
-    margin-top: 2%;
+    margin-top: 3%;
+    width: 100%;
   }
-  .page-home .sobre .sobre-texto p {
+  .page-home .sobre .row .sobre-texto p {
     font-size: 1.5rem;
     padding-left: 100px;
     padding-right: 5%;
   }
-  .page-home .tecnica .titulo {
-    width: 100%;
-    margin-left: 25%;
+  .page-home .sobre .row .sobre-texto .titulo {
+    margin-left: 100px;
   }
-  .page-home .tecnica .tecnica-item p {
-    font-size: 2.5rem;
-  }
-  .page-home .tecnica .tecnica-item img {
-    height: 70px;
-  }
-  .page-home .espaco #espaco-wrapper {
-    padding: 0px 15% 0 15%;
-  }
-  .page-home .contato {
-    min-height: 100vh;
-    height: auto;
-  }
-  .page-home .contato p {
-    margin-top: 80px;
-    padding-left: 100px;
-    font-size: 2rem;
-  }
-  .page-home .contato form {
-    margin-top: 150px;
-    margin-right: 150px;
-    padding-left: 50px;
-  }
-  .page-home .contato form input,
-.page-home .contato form textarea {
+  .page-home .tecnica .row {
     margin-top: 50px;
   }
-  .page-home .contato form input::placeholder,
-.page-home .contato form textarea::placeholder {
+  .page-home .tecnica .row .tecnica-item p {
+    font-size: 3rem;
+  }
+  .page-home .banner .container-video .row h2, .page-home .banner-topo .container-video .row h2 {
+    font-size: 4.5rem;
+  }
+  .page-home .banner .container-video .row p img, .page-home .banner-topo .container-video .row p img {
+    height: 100%;
+  }
+  .page-home .contato {
+    height: auto;
+  }
+  .page-home .contato .row {
+    margin-top: 100px;
+  }
+  .page-home .contato .row p {
+    font-size: 2rem;
+  }
+  .page-home .contato .row .wrapper-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-home .contato .row .wrapper-form form {
+    padding-left: 50px;
+  }
+  .page-home .contato .row .wrapper-form form input::placeholder,
+.page-home .contato .row .wrapper-form form textarea::placeholder {
     font-size: 1.6rem;
   }
 }
@@ -14312,10 +14387,12 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     padding-left: 100px;
     padding-right: 5%;
   }
-}
-@media (max-height: 768px) {
-  .page-home .topo {
-    height: 100vh;
+  .page-home .banner .container-video .row h2, .page-home .banner-topo .container-video .row h2 {
+    font-size: 5rem;
+  }
+  .page-home .banner .container-video .row p, .page-home .banner-topo .container-video .row p {
+    font-size: 2rem;
+    margin: 20% 0;
   }
 }
 .page-contato .content {
