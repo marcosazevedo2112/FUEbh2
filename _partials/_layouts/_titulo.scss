@@ -10,6 +10,7 @@
     padding-left: 0;
     font-size: 3rem;
     line-height: normal;
+    font-weight: 400;
   }
   h3{
     font-size: 1.5rem;
@@ -28,8 +29,9 @@
     display: inline-block;
     position: absolute;
     left: -90px;
+    top: 3px;
     width: 80px;
-    height: 1.5rem;
+    height: 10px;
     background-color: $secondary;
   }
 }
@@ -48,13 +50,9 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
       line-height: normal;
       font-size: 4rem;
     }
-    h3{
-      font-size: 1.5rem;
-    }
     &::before{
       left: -170px;
       width: 150px;
-      height: 1.5rem;
     }
   }
 }
@@ -72,16 +70,12 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
       font-size: 4.5rem;
       line-height: normal;
     }
-    h3{
-      font-size: 1.4rem;
-    }
     &::before{
       content: "";
       display: inline-block;
       position: absolute;
       left: -100px;
       width: 80px;
-      height: 1.4rem;
       background-color: $secondary;
     }
   }

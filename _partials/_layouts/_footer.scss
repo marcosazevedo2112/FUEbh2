@@ -3,7 +3,6 @@ footer{
     text-align: left;
     margin: 50px 0px;
     .row{
-      text-align: center;
       #logo-footer{
         width: 60%;
         margin-bottom: 50px;
@@ -14,9 +13,6 @@ footer{
           margin-top: 30px;
           font-size: 1.5rem;
           img{
-            width: 50px;
-            height: 30px;
-            object-fit: contain;
             margin-right: 15px;
           }
         }
@@ -24,7 +20,7 @@ footer{
     }
   }
   .barra-footer{
-    height: 100px;
+    height: 50px;
     background-color: $primary;
     align-items: center;
     #privacidade-wrapper{
@@ -54,14 +50,15 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     footer{
         margin: 80px 0px;
         .row{
-          align-items: center;
           #logo-footer{
             width: 300px;
+          }
+          li:first-child{
+            margin-top: 0px;
           }
         }
       }
       .barra-footer{
-        height: 150px;
         #privacidade-wrapper{
           text-align: left;
         }

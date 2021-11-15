@@ -141,7 +141,6 @@ h2 {
     i {
         @include box-i;
         background-size: cover;
-        mix-blend-mode: multiply;
         z-index: 0;
     }
     .row {
