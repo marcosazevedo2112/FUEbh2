@@ -12562,7 +12562,6 @@ footer {
   margin: 50px 0px;
 }
 footer .row #logo-footer {
-  width: 60%;
   margin-bottom: 50px;
 }
 footer .row ul {
@@ -12574,6 +12573,9 @@ footer .row ul li {
 }
 footer .row ul li img {
   margin-right: 15px;
+}
+footer .row ul li:first-child {
+  margin-top: 0px;
 }
 
 .barra-footer {
@@ -12607,7 +12609,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     margin: 80px 0px;
   }
   footer .row #logo-footer {
-    width: 300px;
+    margin-bottom: 0px;
   }
   footer .row li:first-child {
     margin-top: 0px;
@@ -14023,7 +14025,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   resize: none;
   background-color: transparent;
   color: white;
-  border-radius: 5px;
   box-shadow: none;
   border: none;
   border-bottom: #f0d47c solid 2px;
@@ -14038,7 +14039,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
   color: #ffffff;
   opacity: 1;
 }
-.page-home .contato .btn-wrapper button {
+.page-home .contato .btn-wrapper input {
   width: 100%;
   padding: 15px;
   border: none;
@@ -14219,7 +14220,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     width: 100%;
     text-align: right;
   }
-  .page-home .contato .row .wrapper-form form .btn-wrapper button {
+  .page-home .contato .row .wrapper-form form .btn-wrapper input {
     width: 30%;
   }
 }
